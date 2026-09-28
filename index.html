@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Linha Editorial · 6 Carrosséis — Innovare Construção Seca</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#00ff01;--ink-green:#00870a;--green-dim:rgba(0,170,10,.10);--border-green:rgba(0,150,10,.35);
+    --bg:#f3f4f1;--surface:#ffffff;--surface-2:#eceee9;--border:rgba(0,0,0,.09);
+    --white:#0d0d0d;--muted:rgba(0,0,0,.55);--text:rgba(0,0,0,.84);
+    --yellow:#a87800;--yellow-bg:rgba(200,150,0,.10);--yellow-border:rgba(180,130,0,.4);
+    --radius:16px;--glow:rgba(0,200,10,.10);
+    --logo-dark:none;--logo-light:block;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ink-green:#00ff01;--green-dim:rgba(0,255,1,.12);--border-green:rgba(0,255,1,.3);
+      --bg:#080808;--surface:#111111;--surface-2:#181818;--border:rgba(255,255,255,.07);
+      --white:#fff;--muted:rgba(255,255,255,.5);--text:rgba(255,255,255,.88);
+      --yellow:#ffc800;--yellow-bg:rgba(255,200,0,.08);--yellow-border:rgba(255,200,0,.35);
+      --glow:rgba(0,255,1,.12);--logo-dark:block;--logo-light:none;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink-green:#00ff01;--green-dim:rgba(0,255,1,.12);--border-green:rgba(0,255,1,.3);
+    --bg:#080808;--surface:#111111;--surface-2:#181818;--border:rgba(255,255,255,.07);
+    --white:#fff;--muted:rgba(255,255,255,.5);--text:rgba(255,255,255,.88);
+    --yellow:#ffc800;--yellow-bg:rgba(255,200,0,.08);--yellow-border:rgba(255,200,0,.35);
+    --glow:rgba(0,255,1,.12);--logo-dark:block;--logo-light:none;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+  html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:15px;line-height:1.7;min-height:100%;overflow-x:hidden}
+  h1,h2,h3,.syne{font-family:'Syne','Inter',system-ui,sans-serif}
+  img{max-width:100%}
+  .logo-w{display:var(--logo-dark)}.logo-d{display:var(--logo-light)}
+  button,textarea{font:inherit}
+  :focus-visible{outline:2px solid var(--ink-green);outline-offset:3px;border-radius:6px}
+
+  .progress-bar{position:fixed;top:0;left:0;height:3px;background:var(--green);box-shadow:0 0 10px var(--green);z-index:1000;width:0%;transition:width .1s linear}
+  .nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:100;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px}
+  .nav-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px;gap:16px}
+  .nav-brand img{width:44px;height:auto}
+  .nav-jumps{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+  .nav-jumps::-webkit-scrollbar{display:none}
+  .jump{flex-shrink:0;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;text-decoration:none;color:var(--muted);border:1px solid var(--border);background:var(--surface);font-family:'Syne',sans-serif}
+  .jump:hover{color:var(--white);border-color:var(--border-green)}
+  .jump.approved{background:var(--green);color:#080808;border-color:var(--green)}
+  .jump.changes{background:var(--yellow-bg);color:var(--yellow);border-color:var(--yellow-border)}
+
+  .hero{position:relative;padding:72px 24px 56px;text-align:center;overflow:hidden}
+  .hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:500px;height:500px;max-width:120vw;background:radial-gradient(circle,var(--glow) 0%,transparent 70%);pointer-events:none;animation:pulse 6s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:.6;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.08)}}
+  .hero-logo img{width:110px;height:auto;margin:0 auto 28px}
+  .hero-eyebrow{font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--ink-green);margin-bottom:14px}
+  .hero-title{font-size:clamp(34px,7vw,62px);font-weight:800;line-height:1.02;letter-spacing:-.02em;color:var(--white);margin-bottom:18px}
+  .hero-title span{color:var(--ink-green)}
+  .hero-sub{font-size:16px;color:var(--muted);max-width:520px;margin:0 auto 36px}
+  .hero-sub strong{color:var(--white);font-weight:600}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+  .meta-pill{display:inline-flex;align-items:center;gap:7px;padding:7px 16px;background:var(--surface);border:1px solid var(--border);border-radius:100px;font-size:12px;color:var(--muted)}
+
+  .divider{width:100%;max-width:960px;margin:0 auto;height:1px;background:linear-gradient(90deg,transparent,var(--border-green),transparent)}
+  .container{max-width:960px;margin:0 auto;padding:0 24px}
+  .section{padding:56px 0}
+  .section-label{font-size:12px;font-weight:600;color:var(--ink-green);margin-bottom:6px}
+  .section-title{font-size:clamp(22px,3.5vw,30px);font-weight:700;color:var(--white);margin-bottom:24px;letter-spacing:-.01em;line-height:1.2}
+  .lead{max-width:640px;color:var(--muted);margin-bottom:32px}
+
+  /* jornada */
+  .journey{display:grid;grid-template-columns:repeat(6,1fr);gap:0;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--surface)}
+  .step{padding:18px 16px;border-right:1px solid var(--border);text-decoration:none;color:inherit;display:block;position:relative}
+  .step:last-child{border-right:none}
+  .step:hover{background:var(--green-dim)}
+  .step-n{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:var(--ink-green);line-height:1}
+  .step-verb{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--white);margin:10px 0 4px}
+  .step-desc{font-size:12px;color:var(--muted);line-height:1.45}
+  @media(max-width:820px){.journey{grid-template-columns:repeat(3,1fr)}.step:nth-child(3){border-right:none}.step:nth-child(-n+3){border-bottom:1px solid var(--border)}}
+  @media(max-width:480px){.journey{grid-template-columns:1fr 1fr}.step{border-right:1px solid var(--border)!important;border-bottom:1px solid var(--border)}.step:nth-child(2n){border-right:none!important}.step:nth-last-child(-n+2){border-bottom:none}}
+  .note{margin-top:14px;font-size:12px;color:var(--muted)}
+
+  .status-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+  .status-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:100px;font-size:13px;font-weight:600;border:1px solid var(--border);color:var(--muted);background:var(--surface)}
+  .status-pill .dot{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+  .status-pill.ok{color:var(--ink-green);border-color:var(--border-green);background:var(--green-dim)}
+  .status-pill.ok .dot{background:var(--green);box-shadow:0 0 8px var(--green)}
+  .status-pill.adj{color:var(--yellow);border-color:var(--yellow-border);background:var(--yellow-bg)}
+  .status-pill.adj .dot{background:var(--yellow)}
+
+  /* carrossel */
+  .carousel{padding:64px 0;border-top:1px solid var(--border)}
+  .c-head{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start;margin-bottom:28px}
+  .c-num{font-family:'Syne',sans-serif;font-size:clamp(64px,11vw,112px);font-weight:800;line-height:.85;color:var(--ink-green);letter-spacing:-.04em}
+  .c-kicker{font-size:12px;font-weight:600;color:var(--muted);margin-bottom:6px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .c-state{padding:3px 10px;border-radius:100px;font-size:11px;font-weight:700;border:1px solid var(--border);color:var(--muted)}
+  .c-state.approved{background:var(--green);color:#080808;border-color:var(--green)}
+  .c-state.changes{background:var(--yellow-bg);color:var(--yellow);border-color:var(--yellow-border)}
+  .c-title{font-size:clamp(22px,4vw,34px);font-weight:800;color:var(--white);line-height:1.1;letter-spacing:-.015em}
+  .c-theme{margin-top:8px;color:var(--muted);font-size:14px}
+  @media(max-width:560px){.c-head{grid-template-columns:1fr;gap:8px}}
+
+  .brief{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:28px}
+  .brief>div{background:var(--surface);padding:16px 18px}
+  .brief dt{font-size:11px;font-weight:600;color:var(--ink-green);margin-bottom:4px}
+  .brief dd{font-size:13.5px;color:var(--text);line-height:1.55}
+  @media(max-width:620px){.brief{grid-template-columns:1fr}}
+
+  .slides-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;gap:12px}
+  .slides-head h3{font-size:15px;font-weight:700;color:var(--white)}
+  .slides-head span{font-size:12px;color:var(--muted)}
+  .slides{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(240px,31%);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:14px;margin-bottom:28px;scrollbar-width:thin;scrollbar-color:var(--green) transparent}
+  .slides::-webkit-scrollbar{height:4px}.slides::-webkit-scrollbar-thumb{background:var(--green);border-radius:2px}
+  @media(max-width:560px){.slides{grid-auto-columns:82%}}
+  .slide{scroll-snap-align:start;aspect-ratio:4/5;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 20px;display:flex;flex-direction:column;position:relative}
+  .slide-page{font-size:11px;font-weight:600;color:var(--muted);display:flex;justify-content:space-between}
+  .slide-h{font-family:'Syne',sans-serif;font-size:clamp(19px,2.2vw,22px);font-weight:700;color:var(--white);line-height:1.18;margin-top:auto;margin-bottom:12px;letter-spacing:-.01em}
+  .slide-s{font-size:13px;color:var(--muted);line-height:1.55}
+  .slide.cover{border-color:var(--border-green)}
+  .slide.cover .slide-h{font-size:clamp(22px,2.6vw,26px)}
+  .slide.cta{background:var(--green);border-color:var(--green)}
+  .slide.cta .slide-page,.slide.cta .slide-s{color:rgba(8,8,8,.72)}
+  .slide.cta .slide-h{color:#080808}
+  .slide-tag{font-size:10px;font-weight:700;padding:2px 8px;border-radius:100px;background:#080808;color:var(--green)}
+
+  .caption-wrap{display:grid;grid-template-columns:1fr 260px;gap:16px;margin-bottom:28px}
+  @media(max-width:760px){.caption-wrap{grid-template-columns:1fr}}
+  .panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;position:relative;overflow:hidden}
+  .panel::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--green)}
+  .panel h4{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--white);margin-bottom:10px}
+  .caption p{font-size:14px;margin-bottom:10px;max-width:66ch}
+  .caption p:last-child{margin-bottom:0}
+  .tags{display:flex;flex-wrap:wrap;gap:6px}
+  .tags span{padding:4px 10px;border-radius:100px;background:var(--green-dim);border:1px solid var(--border-green);font-size:12px;color:var(--ink-green);font-weight:500;word-break:break-all}
+  .role{margin-top:16px;font-size:12.5px;color:var(--muted);line-height:1.5}
+  .role b{color:var(--white);font-weight:600}
+
+  .approve{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:16px 18px;border:1px dashed var(--border-green);border-radius:var(--radius)}
+  .approve-q{font-size:14px;font-weight:600;color:var(--white);margin-right:auto}
+  .btn{padding:10px 18px;border-radius:100px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:13px;font-weight:600;cursor:pointer;transition:background .15s,border-color .15s}
+  .btn:hover{border-color:var(--border-green)}
+  .btn.primary[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#080808}
+  .btn.warn[aria-pressed="true"]{background:var(--yellow-bg);border-color:var(--yellow-border);color:var(--yellow)}
+  .adjust{flex-basis:100%;display:none}
+  .adjust.open{display:block}
+  .adjust label{display:block;font-size:12px;color:var(--muted);margin-bottom:6px}
+  textarea{width:100%;min-height:84px;resize:vertical;padding:12px 14px;border-radius:12px;border:1px solid var(--yellow-border);background:var(--surface-2);color:var(--text);font-size:14px;line-height:1.5}
+
+  /* produção */
+  .prod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .prod-grid .panel p{font-size:13.5px;color:var(--text);line-height:1.6}
+  .ctas{display:flex;flex-direction:column;gap:8px;margin-top:4px}
+  .ctas div{display:flex;gap:10px;font-size:13px;align-items:baseline}
+  .ctas b{font-family:'Syne',sans-serif;color:var(--ink-green);min-width:22px}
+
+  /* resumo */
+  .summary{background:var(--surface);border:1px solid var(--border-green);border-radius:var(--radius);padding:24px}
+  .summary pre{white-space:pre-wrap;font-family:'Inter',sans-serif;font-size:13.5px;color:var(--text);background:var(--surface-2);border-radius:12px;padding:16px 18px;margin:16px 0;max-height:360px;overflow:auto;border:1px solid var(--border)}
+  .summary-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .copied{font-size:12px;color:var(--ink-green)}
+
+  .footer{padding:40px 24px;text-align:center;border-top:1px solid var(--border)}
+  .footer img{width:140px;height:auto;margin:0 auto 10px}
+  .footer-sub{font-size:12px;color:var(--muted)}
+  @media(max-width:640px){.hero{padding:56px 16px 44px}.carousel{padding:48px 0}}
+  @media(prefers-reduced-motion:reduce){.hero::before{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-brand" aria-label="Voltar ao topo">
+      <img class="logo-w" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iQ2FtYWRhXzIiIGRhdGEtbmFtZT0iQ2FtYWRhIDIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDI1MC4zNSAyMTguMTUiPjxkZWZzPjxzdHlsZT4uY2xzLTF7Zm9udC1zaXplOjc2Ljc3cHh9LmNscy0xLC5jbHMtMiwuY2xzLTMsLmNscy00LC5jbHMtNXtmaWxsOiNmZmZ9LmNscy0xLC5jbHMtMiwuY2xzLTQsLmNscy01e2ZvbnQtZmFtaWx5Ok5lZ3JpdGFQcm8sJ05lZ3JpdGEgUHJvJ30uY2xzLTJ7Zm9udC1zaXplOjc2Ljc3cHh9LmNscy0ze2ZvbnQtZmFtaWx5OlNGUHJvRGlzcGxheS1SZWd1bGFyLCdTRiBQcm8gRGlzcGxheSc7Zm9udC1zaXplOjI1LjQ4cHh9LmNscy00e2ZvbnQtc2l6ZToxMTQuNzZweH0uY2xzLTZ7ZmlsbDojMDBmZjAxO2ZpbGwtcnVsZTpldmVub2RkfS5jbHMtNXtmb250LXNpemU6MTE0Ljc2cHh9PC9zdHlsZT48L2RlZnM+PGcgaWQ9IkNhbWFkYV8xLTIiIGRhdGEtbmFtZT0iQ2FtYWRhIDEiPjxnPjx0ZXh0IGNsYXNzPSJjbHMtNSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuMiAxNjAuNikgcm90YXRlKC03LjE5KSI+PHRzcGFuIHg9IjAiIHk9IjAiPk08L3RzcGFuPjwvdGV4dD48dGV4dCBjbGFzcz0iY2xzLTQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDk4LjA3IDE1MC40Mykgcm90YXRlKC43KSI+PHRzcGFuIHg9IjAiIHk9IjAiPms8L3RzcGFuPjwvdGV4dD48dGV4dCBjbGFzcz0iY2xzLTUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE1OC44IDE1MS4zOSkgcm90YXRlKDYuNDgpIj48dHNwYW4geD0iMCIgeT0iMCI+dDwvdHNwYW4+PC90ZXh0Pjx0ZXh0IGNsYXNzPSJjbHMtNCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjA1Ljc1IDE1Ny4wMykgcm90YXRlKDEwLjQxKSI+PHRzcGFuIHg9IjAiIHk9IjAiPiE8L3RzcGFuPjwvdGV4dD48dGV4dCBjbGFzcz0iY2xzLTIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDY5LjExIDY3LjY5KSByb3RhdGUoLTMuMDUpIj48dHNwYW4geD0iMCIgeT0iMCI+QTwvdHNwYW4+PC90ZXh0Pjx0ZXh0IGNsYXNzPSJjbHMtMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTEyLjI4IDY1LjM1KSByb3RhdGUoLjczKSI+PHRzcGFuIHg9IjAiIHk9IjAiPnE8L3RzcGFuPjwvdGV4dD48dGV4dCBjbGFzcz0iY2xzLTIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE1MS42MSA2NS43OSkgcm90YXRlKDQuNDUpIj48dHNwYW4geD0iMCIgeT0iMCI+dTwvdHNwYW4+PC90ZXh0Pjx0ZXh0IGNsYXNzPSJjbHMtMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTkxLjI3IDY5LjExKSByb3RhdGUoNy4xMSkiPjx0c3BhbiB4PSIwIiB5PSIwIj5pPC90c3Bhbj48L3RleHQ+PHRleHQgY2xhc3M9ImNscy0yIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMDguMTEgNzEuMjEpIHJvdGF0ZSg4LjU5KSI+PHRzcGFuIHg9IjAiIHk9IjAiPiw8L3RzcGFuPjwvdGV4dD48dGV4dCBjbGFzcz0iY2xzLTMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDExLjMxIDIwNy4zNCkiPjx0c3BhbiB4PSIwIiB5PSIwIj5NYXJrZXRpbmcgRXN0cmF0w6lnaWNvPC90c3Bhbj48L3RleHQ+PHBhdGggY2xhc3M9ImNscy02IiBkPSJNNDEuNzYsMzIuMDZjNS44LS41OSwxMC44NiwzLjUzLDExLjQ1LDkuMzMuNTgsNS43Mi0zLjU0LDEwLjc5LTkuMzQsMTEuMzgtNS43Mi41OC0xMC43OS0zLjU0LTExLjM3LTkuMjYtLjU5LTUuOCwzLjUzLTEwLjg2LDkuMjYtMTEuNDRaTTQwLjUyLDE5Ljg2YzEyLjY1LTEuMjksMjMuODUsNy44NCwyNS4xNSwyMC40OS40NSw0LjM3LS4zNCw4LjU2LTIuMSwxMi4yNGwtMTYuMTgsMzQuNTItMjIuNzUtMzAuNTVjLTIuNDYtMy4yNS00LjE2LTcuMTgtNC42LTExLjU1LTEuMjktMTIuNjUsNy45MS0yMy44NiwyMC40OS0yNS4xNVoiLz48L2c+PC9nPjwvc3ZnPg==" alt="Aqui, Mkt!"><img class="logo-d" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iQ2FtYWRhXzIiIGRhdGEtbmFtZT0iQ2FtYWRhIDIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDI1MC4zNSAyMTguMTUiPjxkZWZzPjxzdHlsZT4uY2xzLTF7Zm9udC1zaXplOjc2Ljc3cHh9LmNscy0xLC5jbHMtMiwuY2xzLTMsLmNscy00LC5jbHMtNXtmaWxsOiMwZDBkMGR9LmNscy0xLC5jbHMtMiwuY2xzLTQsLmNscy01e2ZvbnQtZmFtaWx5Ok5lZ3JpdGFQcm8sJ05lZ3JpdGEgUHJvJ30uY2xzLTJ7Zm9udC1zaXplOjc2Ljc3cHh9LmNscy0ze2ZvbnQtZmFtaWx5OlNGUHJvRGlzcGxheS1SZWd1bGFyLCdTRiBQcm8gRGlzcGxheSc7Zm9udC1zaXplOjI1LjQ4cHh9LmNscy00e2ZvbnQtc2l6ZToxMTQuNzZweH0uY2xzLTZ7ZmlsbDojMDBmZjAxO2ZpbGwtcnVsZTpldmVub2RkfS5jbHMtNXtmb250LXNpemU6MTE0Ljc2cHh9PC9zdHlsZT48L2RlZnM+PGcgaWQ9IkNhbWFkYV8xLTIiIGRhdGEtbmFtZT0iQ2FtYWRhIDEiPjxnPjx0ZXh0IGNsYXNzPSJjbHMtNSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuMiAxNjAuNikgcm90YXRlKC03LjE5KSI+PHRzcGFuIHg9IjAiIHk9IjAiPk08L3RzcGFuPjwvdGV4dD48dGV4dCBjbGFzcz0iY2xzLTQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDk4LjA3IDE1MC40Mykgcm90YXRlKC43KSI+PHRzcGFuIHg9IjAiIHk9IjAiPms8L3RzcGFuPjwvdGV4dD48dGV4dCBjbGFzcz0iY2xzLTUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE1OC44IDE1MS4zOSkgcm90YXRlKDYuNDgpIj48dHNwYW4geD0iMCIgeT0iMCI+dDwvdHNwYW4+PC90ZXh0Pjx0ZXh0IGNsYXNzPSJjbHMtNCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjA1Ljc1IDE1Ny4wMykgcm90YXRlKDEwLjQxKSI+PHRzcGFuIHg9IjAiIHk9IjAiPiE8L3RzcGFuPjwvdGV4dD48dGV4dCBjbGFzcz0iY2xzLTIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDY5LjExIDY3LjY5KSByb3RhdGUoLTMuMDUpIj48dHNwYW4geD0iMCIgeT0iMCI+QTwvdHNwYW4+PC90ZXh0Pjx0ZXh0IGNsYXNzPSJjbHMtMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTEyLjI4IDY1LjM1KSByb3RhdGUoLjczKSI+PHRzcGFuIHg9IjAiIHk9IjAiPnE8L3RzcGFuPjwvdGV4dD48dGV4dCBjbGFzcz0iY2xzLTIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE1MS42MSA2NS43OSkgcm90YXRlKDQuNDUpIj48dHNwYW4geD0iMCIgeT0iMCI+dTwvdHNwYW4+PC90ZXh0Pjx0ZXh0IGNsYXNzPSJjbHMtMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTkxLjI3IDY5LjExKSByb3RhdGUoNy4xMSkiPjx0c3BhbiB4PSIwIiB5PSIwIj5pPC90c3Bhbj48L3RleHQ+PHRleHQgY2xhc3M9ImNscy0yIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMDguMTEgNzEuMjEpIHJvdGF0ZSg4LjU5KSI+PHRzcGFuIHg9IjAiIHk9IjAiPiw8L3RzcGFuPjwvdGV4dD48dGV4dCBjbGFzcz0iY2xzLTMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDExLjMxIDIwNy4zNCkiPjx0c3BhbiB4PSIwIiB5PSIwIj5NYXJrZXRpbmcgRXN0cmF0w6lnaWNvPC90c3Bhbj48L3RleHQ+PHBhdGggY2xhc3M9ImNscy02IiBkPSJNNDEuNzYsMzIuMDZjNS44LS41OSwxMC44NiwzLjUzLDExLjQ1LDkuMzMuNTgsNS43Mi0zLjU0LDEwLjc5LTkuMzQsMTEuMzgtNS43Mi41OC0xMC43OS0zLjU0LTExLjM3LTkuMjYtLjU5LTUuOCwzLjUzLTEwLjg2LDkuMjYtMTEuNDRaTTQwLjUyLDE5Ljg2YzEyLjY1LTEuMjksMjMuODUsNy44NCwyNS4xNSwyMC40OS40NSw0LjM3LS4zNCw4LjU2LTIuMSwxMi4yNGwtMTYuMTgsMzQuNTItMjIuNzUtMzAuNTVjLTIuNDYtMy4yNS00LjE2LTcuMTgtNC42LTExLjU1LTEuMjktMTIuNjUsNy45MS0yMy44NiwyMC40OS0yNS4xNVoiLz48L2c+PC9nPjwvc3ZnPg==" alt="Aqui, Mkt!">
+    </a>
+    <div class="nav-jumps" id="navJumps" aria-label="Ir para o carrossel"></div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-logo"><img class="logo-w" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iQ2FtYWRhXzIiIGRhdGEtbmFtZT0iQ2FtYWRhIDIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDI1MC4zNSAyMTguMTUiPjxkZWZzPjxzdHlsZT4uY2xzLTF7Zm9udC1zaXplOjc2Ljc3cHh9LmNscy0xLC5jbHMtMiwuY2xzLTMsLmNscy00LC5jbHMtNXtmaWxsOiNmZmZ9LmNscy0xLC5jbHMtMiwuY2xzLTQsLmNscy01e2ZvbnQtZmFtaWx5Ok5lZ3JpdGFQcm8sJ05lZ3JpdGEgUHJvJ30uY2xzLTJ7Zm9udC1zaXplOjc2Ljc3cHh9LmNscy0ze2ZvbnQtZmFtaWx5OlNGUHJvRGlzcGxheS1SZWd1bGFyLCdTRiBQcm8gRGlzcGxheSc7Zm9udC1zaXplOjI1LjQ4cHh9LmNscy00e2ZvbnQtc2l6ZToxMTQuNzZweH0uY2xzLTZ7ZmlsbDojMDBmZjAxO2ZpbGwtcnVsZTpldmVub2RkfS5jbHMtNXtmb250LXNpemU6MTE0Ljc2cHh9PC9zdHlsZT48L2RlZnM+PGcgaWQ9IkNhbWFkYV8xLTIiIGRhdGEtbmFtZT0iQ2FtYWRhIDEiPjxnPjx0ZXh0IGNsYXNzPSJjbHMtNSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuMiAxNjAuNikgcm90YXRlKC03LjE5KSI+PHRzcGFuIHg9IjAiIHk9IjAiPk08L3RzcGFuPjwvdGV4dD48dGV4dCBjbGFzcz0iY2xzLTQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDk4LjA3IDE1MC40Mykgcm90YXRlKC43KSI+PHRzcGFuIHg9IjAiIHk9IjAiPms8L3RzcGFuPjwvdGV4dD48dGV4dCBjbGFzcz0iY2xzLTUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE1OC44IDE1MS4zOSkgcm90YXRlKDYuNDgpIj48dHNwYW4geD0iMCIgeT0iMCI+dDwvdHNwYW4+PC90ZXh0Pjx0ZXh0IGNsYXNzPSJjbHMtNCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjA1Ljc1IDE1Ny4wMykgcm90YXRlKDEwLjQxKSI+PHRzcGFuIHg9IjAiIHk9IjAiPiE8L3RzcGFuPjwvdGV4dD48dGV4dCBjbGFzcz0iY2xzLTIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDY5LjExIDY3LjY5KSByb3RhdGUoLTMuMDUpIj48dHNwYW4geD0iMCIgeT0iMCI+QTwvdHNwYW4+PC90ZXh0Pjx0ZXh0IGNsYXNzPSJjbHMtMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTEyLjI4IDY1LjM1KSByb3RhdGUoLjczKSI+PHRzcGFuIHg9IjAiIHk9IjAiPnE8L3RzcGFuPjwvdGV4dD48dGV4dCBjbGFzcz0iY2xzLTIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE1MS42MSA2NS43OSkgcm90YXRlKDQuNDUpIj48dHNwYW4geD0iMCIgeT0iMCI+dTwvdHNwYW4+PC90ZXh0Pjx0ZXh0IGNsYXNzPSJjbHMtMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTkxLjI3IDY5LjExKSByb3RhdGUoNy4xMSkiPjx0c3BhbiB4PSIwIiB5PSIwIj5pPC90c3Bhbj48L3RleHQ+PHRleHQgY2xhc3M9ImNscy0yIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMDguMTEgNzEuMjEpIHJvdGF0ZSg4LjU5KSI+PHRzcGFuIHg9IjAiIHk9IjAiPiw8L3RzcGFuPjwvdGV4dD48dGV4dCBjbGFzcz0iY2xzLTMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDExLjMxIDIwNy4zNCkiPjx0c3BhbiB4PSIwIiB5PSIwIj5NYXJrZXRpbmcgRXN0cmF0w6lnaWNvPC90c3Bhbj48L3RleHQ+PHBhdGggY2xhc3M9ImNscy02IiBkPSJNNDEuNzYsMzIuMDZjNS44LS41OSwxMC44NiwzLjUzLDExLjQ1LDkuMzMuNTgsNS43Mi0zLjU0LDEwLjc5LTkuMzQsMTEuMzgtNS43Mi41OC0xMC43OS0zLjU0LTExLjM3LTkuMjYtLjU5LTUuOCwzLjUzLTEwLjg2LDkuMjYtMTEuNDRaTTQwLjUyLDE5Ljg2YzEyLjY1LTEuMjksMjMuODUsNy44NCwyNS4xNSwyMC40OS40NSw0LjM3LS4zNCw4LjU2LTIuMSwxMi4yNGwtMTYuMTgsMzQuNTItMjIuNzUtMzAuNTVjLTIuNDYtMy4yNS00LjE2LTcuMTgtNC42LTExLjU1LTEuMjktMTIuNjUsNy45MS0yMy44NiwyMC40OS0yNS4xNVoiLz48L2c+PC9nPjwvc3ZnPg==" alt="Aqui, Mkt!"><img class="logo-d" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iQ2FtYWRhXzIiIGRhdGEtbmFtZT0iQ2FtYWRhIDIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDI1MC4zNSAyMTguMTUiPjxkZWZzPjxzdHlsZT4uY2xzLTF7Zm9udC1zaXplOjc2Ljc3cHh9LmNscy0xLC5jbHMtMiwuY2xzLTMsLmNscy00LC5jbHMtNXtmaWxsOiMwZDBkMGR9LmNscy0xLC5jbHMtMiwuY2xzLTQsLmNscy01e2ZvbnQtZmFtaWx5Ok5lZ3JpdGFQcm8sJ05lZ3JpdGEgUHJvJ30uY2xzLTJ7Zm9udC1zaXplOjc2Ljc3cHh9LmNscy0ze2ZvbnQtZmFtaWx5OlNGUHJvRGlzcGxheS1SZWd1bGFyLCdTRiBQcm8gRGlzcGxheSc7Zm9udC1zaXplOjI1LjQ4cHh9LmNscy00e2ZvbnQtc2l6ZToxMTQuNzZweH0uY2xzLTZ7ZmlsbDojMDBmZjAxO2ZpbGwtcnVsZTpldmVub2RkfS5jbHMtNXtmb250LXNpemU6MTE0Ljc2cHh9PC9zdHlsZT48L2RlZnM+PGcgaWQ9IkNhbWFkYV8xLTIiIGRhdGEtbmFtZT0iQ2FtYWRhIDEiPjxnPjx0ZXh0IGNsYXNzPSJjbHMtNSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuMiAxNjAuNikgcm90YXRlKC03LjE5KSI+PHRzcGFuIHg9IjAiIHk9IjAiPk08L3RzcGFuPjwvdGV4dD48dGV4dCBjbGFzcz0iY2xzLTQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDk4LjA3IDE1MC40Mykgcm90YXRlKC43KSI+PHRzcGFuIHg9IjAiIHk9IjAiPms8L3RzcGFuPjwvdGV4dD48dGV4dCBjbGFzcz0iY2xzLTUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE1OC44IDE1MS4zOSkgcm90YXRlKDYuNDgpIj48dHNwYW4geD0iMCIgeT0iMCI+dDwvdHNwYW4+PC90ZXh0Pjx0ZXh0IGNsYXNzPSJjbHMtNCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjA1Ljc1IDE1Ny4wMykgcm90YXRlKDEwLjQxKSI+PHRzcGFuIHg9IjAiIHk9IjAiPiE8L3RzcGFuPjwvdGV4dD48dGV4dCBjbGFzcz0iY2xzLTIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDY5LjExIDY3LjY5KSByb3RhdGUoLTMuMDUpIj48dHNwYW4geD0iMCIgeT0iMCI+QTwvdHNwYW4+PC90ZXh0Pjx0ZXh0IGNsYXNzPSJjbHMtMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTEyLjI4IDY1LjM1KSByb3RhdGUoLjczKSI+PHRzcGFuIHg9IjAiIHk9IjAiPnE8L3RzcGFuPjwvdGV4dD48dGV4dCBjbGFzcz0iY2xzLTIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE1MS42MSA2NS43OSkgcm90YXRlKDQuNDUpIj48dHNwYW4geD0iMCIgeT0iMCI+dTwvdHNwYW4+PC90ZXh0Pjx0ZXh0IGNsYXNzPSJjbHMtMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTkxLjI3IDY5LjExKSByb3RhdGUoNy4xMSkiPjx0c3BhbiB4PSIwIiB5PSIwIj5pPC90c3Bhbj48L3RleHQ+PHRleHQgY2xhc3M9ImNscy0yIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMDguMTEgNzEuMjEpIHJvdGF0ZSg4LjU5KSI+PHRzcGFuIHg9IjAiIHk9IjAiPiw8L3RzcGFuPjwvdGV4dD48dGV4dCBjbGFzcz0iY2xzLTMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDExLjMxIDIwNy4zNCkiPjx0c3BhbiB4PSIwIiB5PSIwIj5NYXJrZXRpbmcgRXN0cmF0w6lnaWNvPC90c3Bhbj48L3RleHQ+PHBhdGggY2xhc3M9ImNscy02IiBkPSJNNDEuNzYsMzIuMDZjNS44LS41OSwxMC44NiwzLjUzLDExLjQ1LDkuMzMuNTgsNS43Mi0zLjU0LDEwLjc5LTkuMzQsMTEuMzgtNS43Mi41OC0xMC43OS0zLjU0LTExLjM3LTkuMjYtLjU5LTUuOCwzLjUzLTEwLjg2LDkuMjYtMTEuNDRaTTQwLjUyLDE5Ljg2YzEyLjY1LTEuMjksMjMuODUsNy44NCwyNS4xNSwyMC40OS40NSw0LjM3LS4zNCw4LjU2LTIuMSwxMi4yNGwtMTYuMTgsMzQuNTItMjIuNzUtMzAuNTVjLTIuNDYtMy4yNS00LjE2LTcuMTgtNC42LTExLjU1LTEuMjktMTIuNjUsNy45MS0yMy44NiwyMC40OS0yNS4xNVoiLz48L2c+PC9nPjwvc3ZnPg==" alt="Aqui, Mkt!"></div>
+  <p class="hero-eyebrow">Linha editorial para aprovação · Innovare Construção Seca</p>
+  <h1 class="hero-title">Linha Editorial<br><span>6 Carrosséis</span></h1>
+  <p class="hero-sub"><strong>O projeto aparece no acabamento. As decisões começam antes.</strong> Revise cada carrossel abaixo e marque se está aprovado ou se precisa de ajuste.</p>
+  <div class="hero-meta">
+    <span class="meta-pill">🏗️ Innovare | Construção Seca</span>
+    <span class="meta-pill">📅 28 de setembro de 2026</span>
+    <span class="meta-pill">🖼️ 6 carrosséis, 36 páginas</span>
+  </div>
+</header>
+
+<div class="divider"></div>
+
+<section class="section">
+  <div class="container">
+    <p class="section-label">Visão geral</p>
+    <h2 class="section-title">Uma jornada de decisão, do sistema à execução</h2>
+    <p class="lead">A sequência acompanha quem planeja uma obra: entender o sistema construtivo, especificar as paredes, pensar no teto, preparar o piso, definir a expressão das superfícies e conectar tudo à execução. Arquitetos e designers conduzem a linha, com conteúdos específicos para engenheiros, gestores de obras e clientes em reforma.</p>
+    <div class="journey" id="journey"></div>
+    <p class="note">A ordem constrói uma narrativa editorial; não representa um cronograma técnico de execução.</p>
+    <div class="status-row" id="statusRow"></div>
+  </div>
+</section>
+
+<main id="carousels"></main>
+
+<section class="section" style="border-top:1px solid var(--border)">
+  <div class="container">
+    <p class="section-label">Orientação de produção</p>
+    <h2 class="section-title">Como a série se sustenta</h2>
+    <div class="prod-grid">
+      <div class="panel">
+        <h4>Coerência da sequência</h4>
+        <p>A série avança do entendimento à contratação: o primeiro conteúdo esclarece funções; o segundo aprofunda a especificação; o terceiro compara escolhas pelo uso; o quarto responde a uma objeção de reforma; o quinto abre espaço para inspiração; e o sexto transforma o aprendizado em ação comercial.</p>
+      </div>
+      <div class="panel">
+        <h4>Evolução dos CTAs</h4>
+        <div class="ctas">
+          <div><b>01</b>Comentar a necessidade</div>
+          <div><b>02</b>Salvar para planejar</div>
+          <div><b>03</b>Compartilhar com quem decide</div>
+          <div><b>04</b>Iniciar atendimento sobre o piso</div>
+          <div><b>05</b>Solicitar catálogos</div>
+          <div><b>06</b>Apresentar o projeto para orçamento</div>
+        </div>
+      </div>
+      <div class="panel">
+        <h4>Direção visual</h4>
+        <p>Alternar esquemas dos sistemas, situação de sala de reunião, comparação de forros, detalhe da base do piso, aproximações das texturas e registros reais de equipe, entrega e execução.</p>
+        <p style="margin-top:10px">Identificar imagens ilustrativas. Usar os nomes das texturas apenas em imagens confirmadas dos respectivos produtos. Não apresentar referências de terceiros como obras da Innovare.</p>
+      </div>
+      <div class="panel">
+        <h4>Base de conteúdo</h4>
+        <p>Briefing de seis carrosséis e Brand &amp; Content Intelligence Pack (seções 3, 4.1, 4.2, 4.5 a 4.8 e 20), sem pesquisa externa. Não inclui percentuais, garantias, limites de carga ou promessas de prazo pendentes de validação.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="resumo" style="border-top:1px solid var(--border)">
+  <div class="container">
+    <p class="section-label">Aprovação</p>
+    <h2 class="section-title">Resumo para enviar à Aqui, Mkt!</h2>
+    <div class="summary">
+      <p style="font-size:14px;color:var(--muted)">Depois de revisar os seis carrosséis, copie o resumo abaixo e envie para a equipe pelo WhatsApp ou e-mail. Os ajustes pedidos aparecem junto de cada carrossel.</p>
+      <pre id="summaryText"></pre>
+      <div class="summary-actions">
+        <button class="btn primary" aria-pressed="true" id="copyBtn" type="button">Copiar resumo</button>
+        <span class="copied" id="copiedMsg" role="status"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <img class="logo-w" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iQ2FtYWRhXzIiIGRhdGEtbmFtZT0iQ2FtYWRhIDIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDI1MC4zNSAyMTguMTUiPjxkZWZzPjxzdHlsZT4uY2xzLTF7Zm9udC1zaXplOjc2Ljc3cHh9LmNscy0xLC5jbHMtMiwuY2xzLTMsLmNscy00LC5jbHMtNXtmaWxsOiNmZmZ9LmNscy0xLC5jbHMtMiwuY2xzLTQsLmNscy01e2ZvbnQtZmFtaWx5Ok5lZ3JpdGFQcm8sJ05lZ3JpdGEgUHJvJ30uY2xzLTJ7Zm9udC1zaXplOjc2Ljc3cHh9LmNscy0ze2ZvbnQtZmFtaWx5OlNGUHJvRGlzcGxheS1SZWd1bGFyLCdTRiBQcm8gRGlzcGxheSc7Zm9udC1zaXplOjI1LjQ4cHh9LmNscy00e2ZvbnQtc2l6ZToxMTQuNzZweH0uY2xzLTZ7ZmlsbDojMDBmZjAxO2ZpbGwtcnVsZTpldmVub2RkfS5jbHMtNXtmb250LXNpemU6MTE0Ljc2cHh9PC9zdHlsZT48L2RlZnM+PGcgaWQ9IkNhbWFkYV8xLTIiIGRhdGEtbmFtZT0iQ2FtYWRhIDEiPjxnPjx0ZXh0IGNsYXNzPSJjbHMtNSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuMiAxNjAuNikgcm90YXRlKC03LjE5KSI+PHRzcGFuIHg9IjAiIHk9IjAiPk08L3RzcGFuPjwvdGV4dD48dGV4dCBjbGFzcz0iY2xzLTQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDk4LjA3IDE1MC40Mykgcm90YXRlKC43KSI+PHRzcGFuIHg9IjAiIHk9IjAiPms8L3RzcGFuPjwvdGV4dD48dGV4dCBjbGFzcz0iY2xzLTUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE1OC44IDE1MS4zOSkgcm90YXRlKDYuNDgpIj48dHNwYW4geD0iMCIgeT0iMCI+dDwvdHNwYW4+PC90ZXh0Pjx0ZXh0IGNsYXNzPSJjbHMtNCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjA1Ljc1IDE1Ny4wMykgcm90YXRlKDEwLjQxKSI+PHRzcGFuIHg9IjAiIHk9IjAiPiE8L3RzcGFuPjwvdGV4dD48dGV4dCBjbGFzcz0iY2xzLTIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDY5LjExIDY3LjY5KSByb3RhdGUoLTMuMDUpIj48dHNwYW4geD0iMCIgeT0iMCI+QTwvdHNwYW4+PC90ZXh0Pjx0ZXh0IGNsYXNzPSJjbHMtMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTEyLjI4IDY1LjM1KSByb3RhdGUoLjczKSI+PHRzcGFuIHg9IjAiIHk9IjAiPnE8L3RzcGFuPjwvdGV4dD48dGV4dCBjbGFzcz0iY2xzLTIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE1MS42MSA2NS43OSkgcm90YXRlKDQuNDUpIj48dHNwYW4geD0iMCIgeT0iMCI+dTwvdHNwYW4+PC90ZXh0Pjx0ZXh0IGNsYXNzPSJjbHMtMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTkxLjI3IDY5LjExKSByb3RhdGUoNy4xMSkiPjx0c3BhbiB4PSIwIiB5PSIwIj5pPC90c3Bhbj48L3RleHQ+PHRleHQgY2xhc3M9ImNscy0yIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMDguMTEgNzEuMjEpIHJvdGF0ZSg4LjU5KSI+PHRzcGFuIHg9IjAiIHk9IjAiPiw8L3RzcGFuPjwvdGV4dD48dGV4dCBjbGFzcz0iY2xzLTMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDExLjMxIDIwNy4zNCkiPjx0c3BhbiB4PSIwIiB5PSIwIj5NYXJrZXRpbmcgRXN0cmF0w6lnaWNvPC90c3Bhbj48L3RleHQ+PHBhdGggY2xhc3M9ImNscy02IiBkPSJNNDEuNzYsMzIuMDZjNS44LS41OSwxMC44NiwzLjUzLDExLjQ1LDkuMzMuNTgsNS43Mi0zLjU0LDEwLjc5LTkuMzQsMTEuMzgtNS43Mi41OC0xMC43OS0zLjU0LTExLjM3LTkuMjYtLjU5LTUuOCwzLjUzLTEwLjg2LDkuMjYtMTEuNDRaTTQwLjUyLDE5Ljg2YzEyLjY1LTEuMjksMjMuODUsNy44NCwyNS4xNSwyMC40OS40NSw0LjM3LS4zNCw4LjU2LTIuMSwxMi4yNGwtMTYuMTgsMzQuNTItMjIuNzUtMzAuNTVjLTIuNDYtMy4yNS00LjE2LTcuMTgtNC42LTExLjU1LTEuMjktMTIuNjUsNy45MS0yMy44NiwyMC40OS0yNS4xNVoiLz48L2c+PC9nPjwvc3ZnPg==" alt="Aqui, Mkt!"><img class="logo-d" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iQ2FtYWRhXzIiIGRhdGEtbmFtZT0iQ2FtYWRhIDIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDI1MC4zNSAyMTguMTUiPjxkZWZzPjxzdHlsZT4uY2xzLTF7Zm9udC1zaXplOjc2Ljc3cHh9LmNscy0xLC5jbHMtMiwuY2xzLTMsLmNscy00LC5jbHMtNXtmaWxsOiMwZDBkMGR9LmNscy0xLC5jbHMtMiwuY2xzLTQsLmNscy01e2ZvbnQtZmFtaWx5Ok5lZ3JpdGFQcm8sJ05lZ3JpdGEgUHJvJ30uY2xzLTJ7Zm9udC1zaXplOjc2Ljc3cHh9LmNscy0ze2ZvbnQtZmFtaWx5OlNGUHJvRGlzcGxheS1SZWd1bGFyLCdTRiBQcm8gRGlzcGxheSc7Zm9udC1zaXplOjI1LjQ4cHh9LmNscy00e2ZvbnQtc2l6ZToxMTQuNzZweH0uY2xzLTZ7ZmlsbDojMDBmZjAxO2ZpbGwtcnVsZTpldmVub2RkfS5jbHMtNXtmb250LXNpemU6MTE0Ljc2cHh9PC9zdHlsZT48L2RlZnM+PGcgaWQ9IkNhbWFkYV8xLTIiIGRhdGEtbmFtZT0iQ2FtYWRhIDEiPjxnPjx0ZXh0IGNsYXNzPSJjbHMtNSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuMiAxNjAuNikgcm90YXRlKC03LjE5KSI+PHRzcGFuIHg9IjAiIHk9IjAiPk08L3RzcGFuPjwvdGV4dD48dGV4dCBjbGFzcz0iY2xzLTQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDk4LjA3IDE1MC40Mykgcm90YXRlKC43KSI+PHRzcGFuIHg9IjAiIHk9IjAiPms8L3RzcGFuPjwvdGV4dD48dGV4dCBjbGFzcz0iY2xzLTUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE1OC44IDE1MS4zOSkgcm90YXRlKDYuNDgpIj48dHNwYW4geD0iMCIgeT0iMCI+dDwvdHNwYW4+PC90ZXh0Pjx0ZXh0IGNsYXNzPSJjbHMtNCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjA1Ljc1IDE1Ny4wMykgcm90YXRlKDEwLjQxKSI+PHRzcGFuIHg9IjAiIHk9IjAiPiE8L3RzcGFuPjwvdGV4dD48dGV4dCBjbGFzcz0iY2xzLTIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDY5LjExIDY3LjY5KSByb3RhdGUoLTMuMDUpIj48dHNwYW4geD0iMCIgeT0iMCI+QTwvdHNwYW4+PC90ZXh0Pjx0ZXh0IGNsYXNzPSJjbHMtMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTEyLjI4IDY1LjM1KSByb3RhdGUoLjczKSI+PHRzcGFuIHg9IjAiIHk9IjAiPnE8L3RzcGFuPjwvdGV4dD48dGV4dCBjbGFzcz0iY2xzLTIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE1MS42MSA2NS43OSkgcm90YXRlKDQuNDUpIj48dHNwYW4geD0iMCIgeT0iMCI+dTwvdHNwYW4+PC90ZXh0Pjx0ZXh0IGNsYXNzPSJjbHMtMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTkxLjI3IDY5LjExKSByb3RhdGUoNy4xMSkiPjx0c3BhbiB4PSIwIiB5PSIwIj5pPC90c3Bhbj48L3RleHQ+PHRleHQgY2xhc3M9ImNscy0yIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMDguMTEgNzEuMjEpIHJvdGF0ZSg4LjU5KSI+PHRzcGFuIHg9IjAiIHk9IjAiPiw8L3RzcGFuPjwvdGV4dD48dGV4dCBjbGFzcz0iY2xzLTMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDExLjMxIDIwNy4zNCkiPjx0c3BhbiB4PSIwIiB5PSIwIj5NYXJrZXRpbmcgRXN0cmF0w6lnaWNvPC90c3Bhbj48L3RleHQ+PHBhdGggY2xhc3M9ImNscy02IiBkPSJNNDEuNzYsMzIuMDZjNS44LS41OSwxMC44NiwzLjUzLDExLjQ1LDkuMzMuNTgsNS43Mi0zLjU0LDEwLjc5LTkuMzQsMTEuMzgtNS43Mi41OC0xMC43OS0zLjU0LTExLjM3LTkuMjYtLjU5LTUuOCwzLjUzLTEwLjg2LDkuMjYtMTEuNDRaTTQwLjUyLDE5Ljg2YzEyLjY1LTEuMjksMjMuODUsNy44NCwyNS4xNSwyMC40OS40NSw0LjM3LS4zNCw4LjU2LTIuMSwxMi4yNGwtMTYuMTgsMzQuNTItMjIuNzUtMzAuNTVjLTIuNDYtMy4yNS00LjE2LTcuMTgtNC42LTExLjU1LTEuMjktMTIuNjUsNy45MS0yMy44NiwyMC40OS0yNS4xNVoiLz48L2c+PC9nPjwvc3ZnPg==" alt="Aqui, Mkt!">
+  <p class="footer-sub">Marketing Estratégico · Linha editorial Innovare Construção Seca · 28/09/2026</p>
+</footer>
+
+<script>
+const POSTS = [
+ {n:"01", verb:"Entender", stepDesc:"Estrutura e vedação interna",
+  title:"Steel Frame e drywall: onde cada um entra",
+  theme:"Steel Frame e drywall: funções no projeto",
+  objetivo:"Explicar a diferença de função entre os sistemas e apresentar a Innovare como orientadora da escolha.",
+  angulo:"Partir da semelhança visual entre perfis e placas para revelar papéis diferentes no projeto.",
+  publico:"Arquitetos e clientes que vão construir", pilar:"Entenda o sistema",
+  role:"Diferencia estrutura de vedação interna e prepara o leitor para especificar cada parte.",
+  pages:[
+   ["Steel Frame ou drywall? A função muda a resposta.","Os dois usam perfis e placas. Entender o papel de cada sistema vem antes de escolher."],
+   ["Primeiro, a estrutura.","No Steel Frame, os perfis leves de aço galvanizado compõem a estrutura, conforme o projeto estrutural."],
+   ["Depois, a divisão dos ambientes.","O drywall é um sistema de vedação interna: chapas de gesso fixadas em perfis para formar paredes, divisórias e forros."],
+   ["Eles podem estar na mesma obra.","Uma construção em Steel Frame pode receber drywall no fechamento interno. Cada sistema participa de uma função prevista no projeto."],
+   ["A escolha começa pela necessidade.","Estruturar uma construção e dividir uma sala são demandas diferentes. A Innovare orienta, fornece materiais e executa essas soluções."],
+   ["Qual parte da obra você precisa resolver?","Conte nos comentários: construção, ampliação ou divisão de ambientes? Essa é a primeira pergunta para orientar a conversa."]],
+  caption:["Na conversa sobre uma obra, nomes parecidos podem esconder necessidades muito diferentes.","Explicar o que será construído ou reorganizado ajuda a equipe a entender a demanda antes de discutir materiais. É assim que a orientação ganha sentido: partindo do projeto e do uso esperado.","Em Juiz de Fora e região, a Innovare reúne fornecimento e execução de construção seca. Nesta sequência, vamos mostrar quais decisões entram nessa conversa — começando pelas paredes do ambiente.","Você está planejando construir, ampliar ou reorganizar um espaço? Conte aqui."],
+  tags:"#InnovareConstrucaoSeca #SteelFrame #Drywall #SistemasConstrutivos #JuizDeFora"},
+ {n:"02", verb:"Especificar", stepDesc:"A rotina orienta a parede",
+  title:"A rotina também especifica a parede",
+  theme:"Especificação de paredes de drywall",
+  objetivo:"Mostrar que a especificação do drywall depende do uso do ambiente, e não apenas de uma medida.",
+  angulo:"Acompanhar as perguntas que surgem ao planejar uma sala de reunião, sem prescrever uma solução universal.",
+  publico:"Arquitetos e engenheiros", pilar:"Especificação sem erro",
+  role:"Aproxima o sistema da rotina de uma sala; abre a discussão sobre outras decisões do ambiente.",
+  pages:[
+   ["A reunião começa na parede.","Em uma sala de reunião, a especificação do drywall precisa considerar o que acontece dentro dela."],
+   ["O som entra no projeto.","A necessidade acústica ajuda a definir a composição da parede. Lã de vidro ou de rocha pode fazer parte do sistema especificado."],
+   ["O que vai ser fixado ali?","Equipamentos e outros elementos previstos na parede precisam entrar na conversa sobre cargas e reforços."],
+   ["A parede tem outras exigências.","Altura, portas, tubulações e requisitos de resistência ao fogo também influenciam a definição de perfis, placas e montagem."],
+   ["O uso orienta a composição.","A Innovare ajuda a relacionar essas necessidades à especificação, ao fornecimento e à execução do drywall."],
+   ["Leve a rotina para a conversa técnica.","Salve este conteúdo e reúna com o profissional do projeto o que a sala precisa acomodar antes de fechar a especificação."]],
+  caption:["Uma planta informa dimensões. A conversa com quem vai usar o espaço revela necessidades que também precisam entrar no projeto.","Como a sala será utilizada? Quais equipamentos serão fixados? Qual é a necessidade acústica? Essas respostas ajudam a construir uma especificação coerente.","A composição do sistema e eventuais reforços dependem da avaliação do projeto. Na Innovare, a orientação técnica faz parte do caminho entre a ideia e a execução.","📌 Salve para a próxima conversa de planejamento. Com as paredes pensadas, o próximo olhar da sequência vai para o teto."],
+  tags:"#InnovareConstrucaoSeca #Drywall #Especificacao #ArquiteturaCorporativa #JuizDeFora"},
+ {n:"03", verb:"Antecipar o uso", stepDesc:"O teto e a manutenção",
+  title:"O teto e a manutenção",
+  theme:"Forro removível e forro de gesso",
+  objetivo:"Comparar forro removível e forro de gesso por necessidades concretas, sem eleger um vencedor universal.",
+  angulo:"Olhar para o que fica acima do forro e para a intenção de iluminação do ambiente.",
+  publico:"Arquitetos de espaços comerciais e gestores de obras", pilar:"Compare antes de escolher",
+  role:"Leva o raciocínio das paredes ao teto e inclui a manutenção na escolha.",
+  pages:[
+   ["E quando precisar acessar acima do forro?","Essa pergunta merece entrar na escolha do teto de um escritório, escola ou espaço comercial."],
+   ["Existe um espaço acima dele.","É o entreforro: a área entre o forro e a estrutura superior. A necessidade de acesso para manutenção faz parte do projeto."],
+   ["Acesso frequente pesa na escolha.","O forro removível facilita o acesso ao entreforro e permite reposicionar luminárias conforme a solução adotada."],
+   ["O desenho da luz também pesa.","Forros de gesso permitem trabalhar rebaixamentos e iluminação indireta. A escolha deve considerar a proposta do ambiente."],
+   ["Compare pelo que o espaço pede.","A Innovare trabalha com forros removíveis e de gesso, conectando orientação e execução às necessidades de cada projeto."],
+   ["Quem cuida da manutenção precisa participar.","Envie este carrossel para quem projeta ou administra o espaço e alinhem a necessidade de acesso antes de escolher o forro."]],
+  caption:["Escolher o teto envolve o dia a dia do ambiente e os momentos em que ele precisa de manutenção.","Por isso, vale aproximar quem projeta de quem administra o espaço. O que precisa ser acessado? Como a iluminação foi pensada? Quais necessidades devem orientar a escolha?","A Innovare atua com diferentes soluções de forro para transformar essas perguntas em uma conversa de especificação e execução.","Compartilhe com quem participa dessa decisão. No próximo conteúdo, o olhar sai do teto e chega à base do piso."],
+  tags:"#InnovareConstrucaoSeca #ForrosRemoviveis #ForroDeGesso #ArquiteturaComercial #JuizDeFora"},
+ {n:"04", verb:"Verificar a base", stepDesc:"O que existe antes do piso",
+  title:"O que existe antes do piso novo",
+  theme:"Base para piso vinílico",
+  objetivo:"Responder à expectativa de instalar piso vinílico sobre qualquer superfície e valorizar a avaliação da base.",
+  angulo:"Revelar a condição que fica escondida depois da instalação, mas participa do resultado.",
+  publico:"Clientes em reforma e designers de interiores", pilar:"Pergunte à Innovare",
+  role:"Avança para o piso e mostra por que a condição existente importa na reforma.",
+  pages:[
+   ["O piso novo vai esconder o desnível?","No piso vinílico, a condição da base precisa ser avaliada antes da instalação."],
+   ["A base participa do resultado.","A superfície deve estar nivelada e preparada. A correção do contrapiso ajuda a evitar deformidades no acabamento."],
+   ["Colado ou encaixado?","Existem as duas formas de instalação. Em ambas, a preparação da superfície faz parte do processo."],
+   ["O modelo também muda a decisão.","O desempenho depende do fabricante e do tipo de instalação. A escolha precisa considerar a solução prevista para o ambiente."],
+   ["Pense no piso junto com a instalação.","A Innovare fornece pisos vinílicos Tarkett e realiza a instalação profissional, com orientação para a escolha."],
+   ["Como está o piso do seu ambiente?","Envie à Innovare fotos do local e conte o que pretende reformar. A equipe orienta os próximos passos para avaliar a instalação."]],
+  caption:["O padrão amadeirado pode chamar a atenção primeiro. Antes da compra, porém, existe outra conversa importante: como está a superfície que vai receber o revestimento?","Vale reunir informações sobre o ambiente e sua condição atual para discutir a escolha com a equipe. Fotos ajudam a iniciar o atendimento; a definição da preparação depende da avaliação necessária para o local.","A Innovare trabalha com fornecimento e instalação de piso vinílico Tarkett. Envie as informações da sua reforma para começar essa conversa.","Depois da base, a sequência avança para o efeito visual das superfícies."],
+  tags:"#InnovareConstrucaoSeca #PisoVinilico #Tarkett #ReformaDeInteriores #JuizDeFora"},
+ {n:"05", verb:"Definir a expressão", stepDesc:"O efeito da superfície",
+  title:"Escolher o efeito da superfície",
+  theme:"Texturas italianas Novacolor",
+  objetivo:"Despertar interesse pelas texturas italianas por meio de diferenças visuais documentadas e do papel da aplicação.",
+  angulo:"Partir da atmosfera desejada e apresentar três caminhos de acabamento, sem listar benefícios genéricos.",
+  publico:"Arquitetos e designers de interiores", pilar:"Superfícies com identidade",
+  role:"Depois dos critérios de uso e instalação, apresenta escolhas de efeito visual.",
+  pages:[
+   ["Que presença você quer dar à parede?","Nas texturas italianas Novacolor, a escolha passa pelo efeito que a superfície traz ao ambiente."],
+   ["Luz que revela volumes.","A Archi+ Pietra traz rusticidade e naturalidade, valorizando a iluminação e os volumes em paredes internas."],
+   ["Movimento no olhar.","A Dune trabalha profundidade e movimento, com um efeito que muda conforme a luz sobre a superfície."],
+   ["A presença do mármore.","O Marmorino combina cal e pó de mármore em um acabamento de efeito marmorizado."],
+   ["A aplicação faz parte do efeito.","Técnica, ferramenta e sequência variam entre produtos. A Innovare representa a Novacolor em Juiz de Fora e realiza a aplicação."],
+   ["Qual efeito conversa com o seu projeto?","Peça à Innovare os catálogos de texturas e apresente o ambiente para conversar sobre o acabamento e sua aplicação."]],
+  caption:["Uma referência de acabamento fica mais clara quando você consegue dizer o que chamou sua atenção: a naturalidade, o relevo, o movimento com a luz ou o efeito marmorizado.","Esse olhar ajuda a transformar inspiração em uma conversa de projeto. Depois, é preciso relacionar o produto escolhido à superfície e à aplicação prevista.","A Innovare reúne texturas Novacolor e aplicação própria, em parceria com a I Colori di Venezia. Assim, a conversa sobre o efeito desejado também considera como ele será executado.","Peça os catálogos e envie sua referência de ambiente. No último post, vamos conectar essas escolhas à organização da obra."],
+  tags:"#InnovareConstrucaoSeca #Novacolor #TexturasItalianas #DesignDeInteriores #JuizDeFora"},
+ {n:"06", verb:"Conectar e executar", stepDesc:"Das escolhas ao escopo",
+  title:"Das escolhas ao escopo da obra",
+  theme:"Orientação, fornecimento, entrega e execução",
+  objetivo:"Transformar o interesse construído ao longo da série em uma conversa comercial sobre orientação, fornecimento e execução.",
+  angulo:"Retomar as decisões anteriores e mostrar como elas precisam aparecer no escopo do atendimento.",
+  publico:"Arquitetos, construtoras e clientes com obra planejada", pilar:"Fornecedor certo",
+  role:"Retoma as decisões anteriores e convida o leitor a conversar sobre o conjunto da obra.",
+  pages:[
+   ["Você escolheu os materiais. E a execução?","Paredes, forros, pisos e texturas precisam entrar em uma conversa que conecte projeto e obra."],
+   ["Primeiro, reúna as decisões.","Uso dos ambientes, sistema escolhido, necessidades de acesso e efeitos de acabamento ajudam a explicar o que o projeto pede."],
+   ["Depois, esclareça o escopo.","O que será fornecido? O que será instalado ou aplicado? Quais serviços precisam entrar no orçamento? Defina essas respostas com a equipe."],
+   ["Inclua a entrega nessa conversa.","A Innovare conta com frota própria e realiza entregas em Juiz de Fora e região, conectando o fornecimento à obra."],
+   ["Da orientação à execução.","Desde 2007, a Innovare trabalha com construção, reunindo materiais e mão de obra. Nas texturas italianas, também fornece e aplica."],
+   ["Traga o projeto para a conversa.","Envie o projeto, a localização da obra e a etapa em que ela está. Fale com a equipe da Innovare para definir as soluções e solicitar um orçamento."]],
+  caption:["Ao longo desta sequência, cada escolha trouxe uma pergunta: qual é a função do sistema? O que a parede precisa atender? Como acessar o forro? Como está a base do piso? Qual efeito o acabamento deve produzir?","Agora, o próximo passo é reunir essas respostas em uma conversa sobre a sua obra.","A Innovare atua em Juiz de Fora e região com orientação, materiais, entrega e execução. O escopo do atendimento deve ser definido conforme as necessidades do projeto.","📲 Envie o projeto, a localização e a etapa atual da obra para conversar com a equipe e solicitar seu orçamento."],
+  tags:"#InnovareConstrucaoSeca #ConstrucaoSeca #ExecucaoDeObras #GestaoDeObras #JuizDeFora"}
+];
+
+const KEY = "innovare-linha-6-aprovacao";
+let state = {};
+try { state = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch(e) { state = {}; }
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e) {} }
+
+const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+document.getElementById("journey").innerHTML = POSTS.map(p =>
+  `<a class="step" href="#c${p.n}"><div class="step-n">${p.n}</div><div class="step-verb">${p.verb}</div><div class="step-desc">${p.stepDesc}</div></a>`).join("");
+
+document.getElementById("carousels").innerHTML = POSTS.map(p => `
+<section class="carousel" id="c${p.n}">
+  <div class="container">
+    <div class="c-head">
+      <div class="c-num" aria-hidden="true">${p.n}</div>
+      <div>
+        <div class="c-kicker">Carrossel ${p.n} de 06 <span class="c-state" data-state="${p.n}">Aguardando revisão</span></div>
+        <h2 class="c-title">${p.title}</h2>
+        <p class="c-theme">${p.theme}</p>
+      </div>
+    </div>
+    <dl class="brief">
+      <div><dt>Objetivo</dt><dd>${p.objetivo}</dd></div>
+      <div><dt>Ângulo</dt><dd>${p.angulo}</dd></div>
+      <div><dt>Público principal</dt><dd>${p.publico}</dd></div>
+      <div><dt>Pilar editorial</dt><dd>${p.pilar}</dd></div>
+    </dl>
+    <div class="slides-head"><h3>Páginas do carrossel</h3><span>Deslize para ver as 6 páginas</span></div>
+    <div class="slides" tabindex="0" aria-label="Páginas do carrossel ${p.n}">
+      ${p.pages.map((pg,i) => {
+        const last = i === 5, first = i === 0;
+        return `<article class="slide${first?' cover':''}${last?' cta':''}">
+          <div class="slide-page"><span>Página ${String(i+1).padStart(2,"0")}</span>${first?'<span>Capa</span>':''}${last?'<span class="slide-tag">CTA</span>':''}</div>
+          <div class="slide-h">${pg[0]}</div>
+          <div class="slide-s">${pg[1]}</div>
+        </article>`;}).join("")}
+    </div>
+    <div class="caption-wrap">
+      <div class="panel caption"><h4>Legenda</h4>${p.caption.map(t=>`<p>${t}</p>`).join("")}</div>
+      <div class="panel"><h4>Hashtags</h4><div class="tags">${p.tags.split(" ").map(t=>`<span>${t}</span>`).join("")}</div>
+        <p class="role"><b>Papel na série:</b> ${p.role}</p></div>
+    </div>
+    <div class="approve">
+      <span class="approve-q">Este carrossel está pronto para produção?</span>
+      <button class="btn primary" type="button" data-act="ok" data-id="${p.n}" aria-pressed="false">Aprovar carrossel</button>
+      <button class="btn warn" type="button" data-act="adj" data-id="${p.n}" aria-pressed="false">Pedir ajuste</button>
+      <div class="adjust" data-adjust="${p.n}">
+        <label for="note${p.n}">O que precisa mudar? Indique a página, se possível.</label>
+        <textarea id="note${p.n}" data-note="${p.n}" placeholder="Ex.: página 03, trocar a headline por..."></textarea>
+      </div>
+    </div>
+  </div>
+</section>`).join("");
+
+function render(){
+  let ok=0, adj=0;
+  POSTS.forEach(p => {
+    const s = state[p.n] || {};
+    const st = s.status || "";
+    if (st==="ok") ok++; if (st==="adj") adj++;
+    const badge = document.querySelector(`[data-state="${p.n}"]`);
+    badge.className = "c-state" + (st==="ok"?" approved":st==="adj"?" changes":"");
+    badge.textContent = st==="ok"?"Aprovado":st==="adj"?"Ajuste pedido":"Aguardando revisão";
+    document.querySelector(`[data-act="ok"][data-id="${p.n}"]`).setAttribute("aria-pressed", st==="ok");
+    document.querySelector(`[data-act="adj"][data-id="${p.n}"]`).setAttribute("aria-pressed", st==="adj");
+    document.querySelector(`[data-adjust="${p.n}"]`).classList.toggle("open", st==="adj");
+    const ta = document.querySelector(`[data-note="${p.n}"]`);
+    if (document.activeElement !== ta) ta.value = s.note || "";
+    const j = document.querySelector(`.jump[href="#c${p.n}"]`);
+    j.className = "jump" + (st==="ok"?" approved":st==="adj"?" changes":"");
+  });
+  const pend = POSTS.length - ok - adj;
+  document.getElementById("statusRow").innerHTML =
+    `<span class="status-pill ok"><span class="dot"></span>${ok} aprovado${ok===1?"":"s"}</span>`+
+    `<span class="status-pill adj"><span class="dot"></span>${adj} com ajuste</span>`+
+    `<span class="status-pill"><span class="dot"></span>${pend} aguardando revisão</span>`;
+  const lines = ["Linha editorial · 6 carrosséis — Innovare Construção Seca",""];
+  POSTS.forEach(p => {
+    const s = state[p.n] || {};
+    const label = s.status==="ok"?"✅ Aprovado":s.status==="adj"?"✏️ Ajuste pedido":"⏳ Aguardando revisão";
+    lines.push(`Carrossel ${p.n} — ${p.title}: ${label}`);
+    if (s.status==="adj" && s.note && s.note.trim()) lines.push(`   Ajuste: ${s.note.trim()}`);
+  });
+  lines.push("", `Total: ${ok} aprovados, ${adj} com ajuste, ${pend} aguardando revisão.`);
+  document.getElementById("summaryText").textContent = lines.join("\n");
+}
+
+document.getElementById("navJumps").innerHTML = POSTS.map(p=>`<a class="jump" href="#c${p.n}" aria-label="Carrossel ${p.n}">${Number(p.n)}</a>`).join("");
+
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-act]"); if (!b) return;
+  const id = b.dataset.id, act = b.dataset.act;
+  const s = state[id] || {};
+  s.status = s.status === act ? "" : act;
+  state[id] = s; save(); render();
+  if (s.status === "adj") document.getElementById("note"+id).focus();
+});
+document.addEventListener("input", e => {
+  const id = e.target.dataset && e.target.dataset.note; if (!id) return;
+  state[id] = state[id] || {}; state[id].note = e.target.value; save(); render();
+});
+
+document.getElementById("copyBtn").addEventListener("click", async () => {
+  const txt = document.getElementById("summaryText").textContent;
+  const msg = document.getElementById("copiedMsg");
+  try { await navigator.clipboard.writeText(txt); msg.textContent = "Resumo copiado."; }
+  catch(e){
+    const r = document.createRange(); r.selectNodeContents(document.getElementById("summaryText"));
+    const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
+    msg.textContent = "Texto selecionado. Use Ctrl+C (ou Copiar) para copiar.";
+  }
+});
+
+const bar = document.getElementById("progressBar");
+addEventListener("scroll", () => {
+  const h = document.documentElement.scrollHeight - innerHeight;
+  bar.style.width = (h > 0 ? scrollY / h * 100 : 0) + "%";
+}, {passive:true});
+
+render();
+</script>
+</body>
+</html>
